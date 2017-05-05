@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+   
+
+   <!--  <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/WEB-INF/jsp/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">HelloWorld</param>
+                <param name="namespace">/example</param>
+            </result>
+        </action>
+    </package>
+
+    <include file="example.xml"/> -->
+	
+ 	<!-- <package name="default" extends="struts-default" namespace="/">
+ 		<action name="hello">
+ 			<result>/index.jsp</result>
+ 		</action>
+ 	
+ 	</package>-->
+ 	<package name="main" extends="struts-default" namespace="/">
+ 		<default-action-ref name="index"></default-action-ref>
+ 		<action name="index">
+ 			<result>/index.jsp</result>
+ 		</action>
+ 		<action name="head">
+ 			<result>/head.jsp</result>
+ 		</action>
+ 		<action name="left">
+ 			<result>/left.jsp</result>
+ 		</action>
+ 	</package>
+ 	
+ 	
+ 	 <constant name="struts.devMode" value="true" />
+ 	 <constant name="struts.custom.i18n.resources" value="bbs"></constant>
+ 	 <package name="category" namespace="/categoryManager" extends="main">
+ 	 	
+ 	 	<action name="*_*" class="org.fage.action.{1}Action" method="{2}">
+ 	 		<result name="get">/WEB-INF/jsp/{1}_{2}.jsp</result><!-- 处理页面的请求 -->
+ 	 		<result name="input">/WEB-INF/jsp/message.jsp</result><!-- 输入提交之后的成功、失败返回页面 -->
+ 	 		<result name="forward">/WEB-INF/jsp/Category_{2}.jsp</result><!-- 转UI的页面 -->
+ 	 	</action>
+ 	 
+ 	 
+ 	 	<!-- <global-exception-mappings>
+ 	 		<exception-mapping result="error" exception="Exception"></exception-mapping>
+ 	 	</global-exception-mappings>
+ 	 	
+ 	 	<action name="error">
+ 	 		<result>/error.jsp</result>
+ 	 	</action> -->
+ 	 	
+ 	 </package>
+ 	 
+ 	 
+ 	 
+ 	 
+</struts>
